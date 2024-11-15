@@ -1,27 +1,26 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { fetchWeatherData, fetchCurrentWeather } from '../api/weatherApi'
 
-// 날씨 데이터를 비동기적으로 가져오는 async thunk
+// 날씨 예보 데이터 가져오기
 export const fetchWeather = createAsyncThunk('weather/fetchWeather', async (city = 'incheon') => {
-   // api를 받아오는 별도의 파일 없이 slice 파일에서 간단하게 가져오기
-   const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=bd90d59ccfa381163f41fd531da28aac&units=metric&lang=kr`)
-   return response.data
+   const data = await fetchWeatherData(city)
+   return data
 })
 
+// 현재 날씨 데이터 가져오기
 export const fetchWeather_now = createAsyncThunk('weather/fetchWeather_now', async (city = 'incheon') => {
-   // api를 받아오는 별도의 파일 없이 slice 파일에서 간단하게 가져오기
-   const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bd90d59ccfa381163f41fd531da28aac&units=metric&lang=kr`)
-   return response.data
+   const data = await fetchCurrentWeather(city)
+   return data
 })
 
-// 슬라이스 생성
+// 날씨 슬라이스
 const weatherSlice = createSlice({
    name: 'weather',
    initialState: {
       weather: null,
       loading: false,
-      error: null,
-      weather_now: null,
+      loading_now: false,
+      error_now: null,
    },
    reducers: {},
    extraReducers: (builder) => {
@@ -38,15 +37,15 @@ const weatherSlice = createSlice({
             state.loading = false
          })
          .addCase(fetchWeather_now.pending, (state) => {
-            state.loading = true
+            state.loading_now = true
          })
          .addCase(fetchWeather_now.fulfilled, (state, action) => {
             state.weather_now = action.payload
-            state.loading = false
+            state.loading_now = false
          })
          .addCase(fetchWeather_now.rejected, (state, action) => {
-            state.error = action.error.message
-            state.loading = false
+            state.error_now = action.error.message
+            state.loading_now = false
          })
    },
 })

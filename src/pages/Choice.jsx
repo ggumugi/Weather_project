@@ -13,7 +13,7 @@ function Choice() {
       (e) => {
          e.preventDefault()
          if (city.trim()) {
-            navigate(`/city=${city}`)
+            navigate(`/home?query=${city}`)
          }
       },
       [city, navigate]

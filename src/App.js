@@ -11,7 +11,7 @@ function App() {
    return (
       <Routes>
          <Route path="/" element={<Choice />} />
-         <Route path="/:city" element={<Home />} />
+         <Route path="/home" element={<Home />} />
          <Route path="/theme" element={<Theme />} />
          <Route path="/price" element={<Price />} />
          <Route path="/map" element={<Map />} />
