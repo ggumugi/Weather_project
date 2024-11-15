@@ -1,0 +1,28 @@
+footer {
+   height: 100px;
+   background-color: #fcffcf;
+   display: flex;
+   align-items: center;
+}
+
+footer p {
+   color: rgba(0, 0, 0, 0.863);
+   font-weight: lighter;
+   text-align: left;
+   padding: 30px;
+   font-size: 12px;
+}
+footer div {
+   margin-left: auto;
+   margin-right: 30px;
+}
+footer div a {
+   text-decoration: none;
+   color: black;
+}
+
+footer div .icon {
+   font-size: 50px;
+   padding: 5px;
+   line-height: 50px;
+}
