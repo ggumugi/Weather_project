@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchWeather, fetchWeather_now, setTheme } from '../features/weatherSlice'
+import { fetchWeather, fetchWeather_now, setTheme, setCityName } from '../features/weatherSlice'
 import './css/WeatherTheme.css'
 
 export function WeatherTheme() {
@@ -16,6 +16,7 @@ export function WeatherTheme() {
    useEffect(() => {
       dispatch(fetchWeather(query))
       dispatch(fetchWeather_now(query))
+      dispatch(setCityName(query))
    }, [query, dispatch])
 
    useEffect(() => {
@@ -37,7 +38,7 @@ export function WeatherTheme() {
                   }
                }
                // 다른 컴포넌트에서도 theme 값을 사용하기 위해 store에 업데이트
-               dispatch(setTheme({ theme: weatherData(weather.list[i].weather[0].id) }))
+               dispatch(setTheme(weatherData(weather.list[i].weather[0].id)))
                // 3시간 기준이라 +8은 24시간 후 -> 다음 날 테마
                var num2 = weather.list[i + 8].weather[0].id
                num2 = Math.floor(num2 / 100)

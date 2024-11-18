@@ -2,14 +2,13 @@ import Menu from '../components/Menu'
 import '../styles/common.css'
 import { Main, Wrap } from '../styles/StyledComponent'
 import Footer from '../components/Footer'
-import ThemeText from '../components/ThemeText'
-
+import PriceDetail from '../components/PriceDetail'
 function Price() {
    return (
       <Wrap>
          <Menu />
          <Main>
-            <p style={{ marginTop: '150px' }}>price</p>
+            <PriceDetail />
          </Main>
          <Footer />
       </Wrap>

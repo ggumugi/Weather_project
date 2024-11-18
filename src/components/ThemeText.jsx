@@ -1,8 +1,13 @@
 import './css/ThemeText.css'
-import { useState, useCallback, useEffect } from 'react'
+import React, { useState } from 'react'
+
+import { useCallback } from 'react'
+import { useSelector } from 'react-redux'
 
 function ThemeText() {
-   const [choice, setChoice] = useState('맑음')
+   const { theme } = useSelector((state) => state.weather)
+   const [choice, setChoice] = useState(theme)
+
    const onClick = useCallback((e) => {
       setChoice(e.target.innerText)
    }, [])
@@ -146,39 +151,32 @@ function ThemeText() {
                <div className="card_attr_snow">
                   <img src="./images/snow_attr1.png" alt="눈_어트랙션1" />
                   <div className="card_text_snow">
-                     <h2>스카이 트램펄린</h2>
-                     <p>
-                        고공 트램펄린에서 뛰어오르며 하늘 가까이 다가가는 스릴을 느낄 수 있는 어트랙션입니다. 뛰어오를 때마다 아래 펼쳐진 테마파크 전경을 감상할 수 있어, 하늘을 나는 듯한 자유로움과 시원함을 즐길 수 있습니다. 특히 맑은 날씨에는 푸른 하늘과 멀리 보이는 경치가 함께 어우러져, 탑승자에게
-                        특별한 기분을 선사합니다.
-                     </p>
+                     <h2>아이스 슬라이드 (Ice Slide)</h2>
+                     <p>길고 구불구불한 얼음 미끄럼틀을 내려오는 스릴 만점의 어트랙션입니다. 눈 속에서 스피드 있게 미끄러지며 스릴을 즐길 수 있으며, 주변에 내리는 눈송이가 더욱 겨울의 분위기를 만들어 줍니다. 차가운 얼음과 눈의 상쾌한 감각 덕에 겨울 테마파크에서 놓치기 어려운 경험을 선사합니다.</p>
                   </div>
                </div>
                <div className="card_attr_snow">
                   <img src="./images/snow_attr2.png" alt="눈_어트랙션2" />
                   <div className="card_text_snow">
-                     <h2>선샤인 윙즈 (Sunshine Wings)</h2>
-                     <p>
-                        작은 비행기를 타고 하늘을 날며 회전하는 글라이더형 어트랙션으로, 푸른 하늘 속에서 비행하는 느낌을 만끽할 수 있습니다. 기구가 바람을 가르며 날아오를 때 반짝이는 햇빛이 탑승자를 감싸, 마치 하늘의 일부가 된 듯한 몰입감을 줍니다. 맑은 날씨에 빛나는 전경과 함께 잊지 못할 비행
-                        경험을 선사합니다.
-                     </p>
+                     <h2>눈꽃 회전목마 (Snowflake Carousel)</h2>
+                     <p>눈송이 모양의 장식으로 꾸며진 회전목마로, 눈 내리는 풍경 속에서 느긋하고 로맨틱한 기분을 즐길 수 있습니다. 회전목마 주위에 눈이 쌓인 장식과 반짝이는 조명이 어우러져 환상적인 겨울 분위기를 조성합니다. 아이들부터 어른들까지, 눈 내리는 날에 따뜻한 기억을 만들기에 좋습니다.</p>
                   </div>
                </div>
                <div className="card_attr_snow">
                   <img src="./images/snow_attr3.png" alt="눈_어트랙션3" />
                   <div className="card_text_snow">
-                     <h2>클라우드 드리프트</h2>
+                     <h2>윈터 스케이트 (Winter Skate)</h2>
                      <p>
-                        구름처럼 생긴 의자에 앉아 공중을 부드럽게 떠다니는 듯한 느낌을 주는 어트랙션입니다. 맑은 날씨에 하늘을 배경으로 하여 구름 사이를 미끄러지듯 유영하며 시원한 바람을 얼굴에 맞으며 평화로움을 느낄 수 있습니다. 마치 하늘 위에서 구름 사이를 떠다니는 꿈같은 경험을 즐기기에
-                        안성맞춤입니다.
+                        얼어붙은 호수나 인공 아이스링크 위에서 스케이트를 타며 겨울을 만끽할 수 있는 어트랙션입니다. 눈이 내리는 가운데, 시원한 바람을 맞으며 스케이트를 타고 돌아다니면 마치 영화 속 장면 같은 설렘을 느낄 수 있습니다. 겨울 특유의 낭만을 즐기며 자유롭게 빙판 위를 활보할 수 있습니다.
                      </p>
                   </div>
                </div>
                <div className="card_fest_snow">
                   <div className="card_text_snow">
-                     <h2>선샤인 페스티벌 (Sunshine Festival)</h2>
+                     <h2>윈터 원더 페스티벌 (Winter Wonder Festival)</h2>
                      <p>
-                        반짝이는 황금빛 의상을 입은 퍼포머들이 태양의 활기와 밝은 에너지를 표현하는 화려한 퍼레이드입니다. 맑은 날씨에 빛나는 퍼레이드 마차와 퍼포머들이 테마파크 전체를 밝고 생동감 있게 물들이며, 보는 사람들에게 기쁨과 활력을 전달합니다. 이 퍼레이드는 오직 화창한 날에만 열려 더욱
-                        특별한 감동을 선사합니다.
+                        겨울의 마법 같은 분위기를 한껏 살린 페스티벌로, 퍼포머들이 얼음과 눈송이를 형상화한 의상을 입고 눈 내리는 광장에서 퍼레이드를 펼칩니다. 빛나는 겨울 조명 아래에서 다양한 공연과 겨울 동화 같은 이야기가 어우러져, 관람객들에게 잊지 못할 겨울 추억을 선사합니다. 이 페스티벌은 눈
+                        내리는 날에만 진행되어 겨울 테마파크의 특별한 매력을 더합니다.
                      </p>
                   </div>
                   <img src="./images/snow_fest.png" alt="눈_페스티벌1" />

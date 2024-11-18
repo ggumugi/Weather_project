@@ -2,13 +2,14 @@ import Menu from '../components/Menu'
 import '../styles/common.css'
 import { Main, Wrap } from '../styles/StyledComponent'
 import Footer from '../components/Footer'
+import ComeMap from '../components/ComeMap'
 
 function Map() {
    return (
       <Wrap>
          <Menu />
          <Main>
-            <p style={{ marginTop: '150px' }}>map</p>
+            <ComeMap />
          </Main>
          <Footer />
       </Wrap>
