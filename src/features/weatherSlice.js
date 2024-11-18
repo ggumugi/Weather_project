@@ -21,8 +21,13 @@ const weatherSlice = createSlice({
       loading: false,
       loading_now: false,
       error_now: null,
+      theme: '',
    },
-   reducers: {},
+   reducers: {
+      setTheme: (state, action) => {
+         state.theme = action.payload.theme
+      },
+   },
    extraReducers: (builder) => {
       builder
          .addCase(fetchWeather.pending, (state) => {
@@ -50,4 +55,5 @@ const weatherSlice = createSlice({
    },
 })
 
+export const { setTheme } = weatherSlice.actions
 export default weatherSlice.reducer

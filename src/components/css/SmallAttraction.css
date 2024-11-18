@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Sunflower:wght@300&display=swap');
+
+.sunny {
+   width: 480px;
+   height: 300px;
+   background-color: rgba(255, 228, 196, 0.705);
+   border-radius: 30px;
+   margin-top: 30px;
+   font-family: 'Sunflower', serif;
+   color: rgb(107, 15, 2);
+}
+.sunny ul {
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   display: inline;
+   list-style-type: disc;
+}
+.sunny ul li {
+   margin-left: 60px;
+   padding-bottom: 10px;
+   font-size: 20px;
+}
+.sunny h2 {
+   margin: 15px 0 0 20px;
+   padding: 10px;
+}
+.sunny .attr {
+   padding-top: 25px;
+}
+.sunny .fest {
+   margin-top: 0;
+}
+.rainy {
+   width: 480px;
+   height: 300px;
+   background-color: rgba(222, 196, 255, 0.705);
+   border-radius: 30px;
+   margin-top: 30px;
+   font-family: 'Sunflower', serif;
+   color: rgb(86, 2, 107);
+}
+.rainy ul {
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   display: inline;
+   list-style-type: disc;
+}
+.rainy ul li {
+   margin-left: 60px;
+   padding-bottom: 10px;
+   font-size: 20px;
+}
+.rainy h2 {
+   margin: 15px 0 0 20px;
+   padding: 10px;
+}
+.rainy .attr {
+   padding-top: 25px;
+}
+.rainy .fest {
+   margin-top: 0;
+}
+.snow {
+   width: 480px;
+   height: 300px;
+   background-color: rgba(196, 241, 255, 0.705);
+   border-radius: 30px;
+   margin-top: 30px;
+   font-family: 'Sunflower', serif;
+   color: rgb(2, 18, 107);
+}
+.snow ul {
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   display: inline;
+   list-style-type: disc;
+}
+.snow ul li {
+   margin-left: 60px;
+   padding-bottom: 10px;
+   font-size: 20px;
+}
+.snow h2 {
+   margin: 15px 0 0 20px;
+   padding: 10px;
+}
+.snow .attr {
+   padding-top: 25px;
+}
+.snow .fest {
+   margin-top: 0;
+}
+.small_slider .swiper {
+   width: 400px;
+   height: 300px;
+   margin-top: 30px;
+   border-radius: 30px;
+   margin-left: 60px;
+}
+
+.small_slider .swiper-slide {
+   background: #fff;
+
+   /* Center slide text vertically */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.small_slider .swiper-slide img {
+   display: block;
+   width: 400px;
+   height: 300px;
+   object-fit: cover;
+}

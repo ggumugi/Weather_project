@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchWeather, fetchWeather_now } from '../features/weatherSlice'
+import { fetchWeather, fetchWeather_now, setTheme } from '../features/weatherSlice'
 import './css/WeatherTheme.css'
 
 export function WeatherTheme() {
    const [searchParams] = useSearchParams()
    const query = searchParams.get('query')
-   const [theme, setTheme] = useState('')
    const [theme2, setTheme2] = useState('')
    const [theme3, setTheme3] = useState('')
    const dispatch = useDispatch()
-   const { weather, loading, error, weather_now, loading_now, error_now } = useSelector((state) => state.weather)
+   const { weather, loading, error, weather_now, loading_now, error_now, theme } = useSelector((state) => state.weather)
    const tod = new Date()
 
    useEffect(() => {
@@ -27,21 +26,24 @@ export function WeatherTheme() {
       } else {
          for (var i = 0; i < weather.list.length; i++) {
             if (weather.list[i].dt_txt === `${today} 12:00:00`) {
-               var num = weather.list[i].weather[0].id
-               num = Math.floor(num / 100)
-               if (num === 2 || num === 5) {
-                  setTheme('비')
-               } else if (num == 6) {
-                  setTheme('눈')
-               } else {
-                  setTheme('맑음')
+               const weatherData = (code) => {
+                  const num = Math.floor(code / 100)
+                  if (num === 2 || num === 5) {
+                     return '비'
+                  } else if (num === 6) {
+                     return '눈'
+                  } else {
+                     return '맑음'
+                  }
                }
+               // 다른 컴포넌트에서도 theme 값을 사용하기 위해 store에 업데이트
+               dispatch(setTheme({ theme: weatherData(weather.list[i].weather[0].id) }))
                // 3시간 기준이라 +8은 24시간 후 -> 다음 날 테마
                var num2 = weather.list[i + 8].weather[0].id
                num2 = Math.floor(num2 / 100)
                if (num2 === 2 || num2 === 5) {
                   setTheme2('비')
-               } else if (num2 == 6) {
+               } else if (num2 === 6) {
                   setTheme2('눈')
                } else {
                   setTheme2('맑음')
@@ -51,7 +53,7 @@ export function WeatherTheme() {
                num3 = Math.floor(num3 / 100)
                if (num3 === 2 || num3 === 5) {
                   setTheme3('비')
-               } else if (num3 == 6) {
+               } else if (num3 === 6) {
                   setTheme3('눈')
                } else {
                   setTheme3('맑음')
@@ -60,7 +62,7 @@ export function WeatherTheme() {
             }
          }
       }
-   }, [weather])
+   }, [weather, dispatch])
    if (loading || loading_now) return <p>Loading...</p>
    if (error || error_now) return <p>Error : {error ? error : error_now}</p>
 
@@ -78,7 +80,7 @@ export function WeatherTheme() {
                      <p className="now">{Math.round(weather_now.main.temp)} ℃</p>
                      {/* 실제 최고, 최저기온이 아닌 실시간 중 최고, 최저 기온 인듯함 */}
                      <p className="most">
-                        최고기온 : {Math.round(weather_now.main.temp_max)} 최저기온 : {Math.round(weather_now.main.temp_min)}
+                        최고기온: {Math.round(weather_now.main.temp_max)}&nbsp; 최저기온: {Math.round(weather_now.main.temp_min)}
                      </p>
                      <p className="day">
                         {tod.getMonth() + 1} / {tod.getDate()}

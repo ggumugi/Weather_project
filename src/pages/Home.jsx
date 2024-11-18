@@ -5,6 +5,7 @@ import BannerSlider from '../components/slider/BannerSlider'
 import Grid from '@mui/material/Grid2'
 import Footer from '../components/Footer'
 import { WeatherTheme } from '../components/WeatherTheme'
+import { SmallAttraction1, SmallAttraction2 } from '../components/SmallAttraction'
 
 function Home() {
    return (
@@ -17,9 +18,11 @@ function Home() {
                   <WeatherTheme />
                </Grid>
                <Grid size={4}>
-                  <p>테마별탈것</p>
+                  <SmallAttraction1 />
                </Grid>
-               <Grid size={4}>탈것사진</Grid>
+               <Grid size={4}>
+                  <SmallAttraction2 />
+               </Grid>
             </Grid>
          </Main>
          <Footer />

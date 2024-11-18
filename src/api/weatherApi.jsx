@@ -9,8 +9,8 @@ export const fetchWeatherData = async (city = 'incheon') => {
       params: {
          q: city,
          appid: API_KEY,
-         units: 'metric', // 섭씨 온도
-         lang: 'kr', // 한국어
+         units: 'metric',
+         lang: 'kr',
       },
    })
    return response.data
@@ -22,8 +22,8 @@ export const fetchCurrentWeather = async (city = 'incheon') => {
       params: {
          q: city,
          appid: API_KEY,
-         units: 'metric', // 섭씨 온도
-         lang: 'kr', // 한국어
+         units: 'metric',
+         lang: 'kr',
       },
    })
    return response.data

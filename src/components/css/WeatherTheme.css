@@ -25,17 +25,32 @@
 }
 .card_text .card_title {
    font-weight: bold;
-   text-align: left;
-   padding-left: 10px;
-   margin-top: 10px;
-   margin-bottom: 0cm;
+   text-align: center;
+   margin-bottom: 5px;
    font-size: 20px;
 }
 
 .card_text .now {
    font-weight: bold;
-   text-align: left;
-   padding-left: 15px;
+   text-align: center;
+
    margin: 0;
    font-size: 30px;
+}
+
+.card_text .most {
+   text-align: center;
+   margin-top: 10px;
+   margin-bottom: 5px;
+   font-size: 15px;
+}
+.card_text .day {
+   text-align: center;
+   margin: 0;
+   font-size: 15px;
+}
+.tommorow {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 20px;
 }

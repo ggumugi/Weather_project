@@ -2,13 +2,14 @@ import Menu from '../components/Menu'
 import '../styles/common.css'
 import { Main, Wrap } from '../styles/StyledComponent'
 import Footer from '../components/Footer'
+import ThemeText from '../components/ThemeText'
 
-function Theme() {
+function Theme({}) {
    return (
       <Wrap>
          <Menu />
-         <Main>
-            <p style={{ marginTop: '150px' }}>theme</p>
+         <Main $width="100%">
+            <ThemeText />
          </Main>
          <Footer />
       </Wrap>

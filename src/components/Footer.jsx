@@ -12,13 +12,13 @@ function Footer() {
          </p>
          <div>
             <a href="https://www.instagram.com/" className="icon">
-               <InstagramIcon className="icon" />
+               <InstagramIcon className="iconf" />
             </a>
-            <a href="https://www.facebook.com/">
-               <FacebookOutlinedIcon className="icon" />
+            <a href="https://www.facebook.com/" className="icon">
+               <FacebookOutlinedIcon className="iconf" />
             </a>
             <a href="https://www.youtube.com/" className="icon">
-               <YouTubeIcon className="icon" />
+               <YouTubeIcon className="iconf" />
             </a>
          </div>
       </footer>
