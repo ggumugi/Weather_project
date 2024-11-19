@@ -6,6 +6,7 @@ import Map from './pages/Map'
 import Announce from './pages/Announce'
 import NotFound from './pages/NotFound'
 import Choice from './pages/Choice'
+import Login from './pages/Login'
 
 function App() {
    return (
@@ -16,6 +17,7 @@ function App() {
          <Route path="/price" element={<Price />} />
          <Route path="/map" element={<Map />} />
          <Route path="/announce" element={<Announce />} />
+         <Route path="/login" element={<Login />} />
          <Route path="/*" element={<NotFound />} />
       </Routes>
    )
