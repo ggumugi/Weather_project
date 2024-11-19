@@ -2,13 +2,14 @@ import Menu from '../components/Menu'
 import '../styles/common.css'
 import { Main, Wrap } from '../styles/StyledComponent'
 import Footer from '../components/Footer'
+import TableList from '../components/TableList'
 
 function Announce() {
    return (
       <Wrap>
          <Menu />
          <Main>
-            <p style={{ marginTop: '150px' }}>announce</p>
+            <TableList />
          </Main>
          <Footer />
       </Wrap>
