@@ -19,6 +19,8 @@ const weatherSlice = createSlice({
    initialState: {
       weather: null,
       loading: false,
+      error: null,
+      weather_now: null,
       loading_now: false,
       error_now: null,
       theme: '',
@@ -36,6 +38,7 @@ const weatherSlice = createSlice({
       builder
          .addCase(fetchWeather.pending, (state) => {
             state.loading = true
+            state.error = null
          })
          .addCase(fetchWeather.fulfilled, (state, action) => {
             state.weather = action.payload
@@ -47,6 +50,7 @@ const weatherSlice = createSlice({
          })
          .addCase(fetchWeather_now.pending, (state) => {
             state.loading_now = true
+            state.error_now = null
          })
          .addCase(fetchWeather_now.fulfilled, (state, action) => {
             state.weather_now = action.payload

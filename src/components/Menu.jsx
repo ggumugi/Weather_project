@@ -21,6 +21,9 @@ function Menu() {
                   <NavLink to="/map">오시는 길</NavLink>
                </li>
                <li className="kind">
+                  <NavLink to="/weather">날씨지도</NavLink>
+               </li>
+               <li className="kind">
                   <NavLink to="/announce">공지사항</NavLink>
                </li>
                <li className="login">

@@ -3,19 +3,18 @@ import '../styles/common.css'
 import { Main, Wrap } from '../styles/StyledComponent'
 import Footer from '../components/Footer'
 import ComeMap from '../components/ComeMap'
+import WeatherMap from '../components/WeatherMap'
 
-// function Map({ use}) {
-function Map() {
+function Weather() {
    return (
       <Wrap>
          <Menu />
          <Main>
-            {/* <ComeMap use={use} /> */}
-            <ComeMap />
+            <WeatherMap />
          </Main>
          <Footer />
       </Wrap>
    )
 }
 
-export default Map
+export default Weather

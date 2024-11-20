@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Sunflower:wght@300&display=swap');
+
 .map_main {
    width: 1440px;
    height: 700px;
@@ -7,9 +9,23 @@
 
    background-color: #e5ffdde7;
 }
+.map_main_1 {
+   width: 1440px;
+   height: 700px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 
+   background-color: #ddfff4e7;
+}
+.map_search {
+   margin-top: 20px;
+}
 .map_map {
    margin-top: 50px;
+}
+.map_map_1 {
+   margin-top: 40px;
 }
 .map_text {
    width: 750px;
@@ -17,6 +33,20 @@
    background-color: rgba(226, 226, 226, 0.527);
    margin-top: 40px;
 }
+.map_text_1 {
+   width: 750px;
+   height: 100px;
+   margin-top: 40px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.map_text_1 h1 {
+   font-weight: lighter;
+   font-family: 'Sunflower', serif;
+   font-size: 25px;
+}
+
 .map_text .map_h {
    font-weight: bolder;
    margin-top: 10px;

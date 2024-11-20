@@ -7,6 +7,7 @@ import Announce from './pages/Announce'
 import NotFound from './pages/NotFound'
 import Choice from './pages/Choice'
 import Login from './pages/Login'
+import Weather from './pages/Weather'
 
 function App() {
    return (
@@ -15,7 +16,10 @@ function App() {
          <Route path="/home" element={<Home />} />
          <Route path="/theme" element={<Theme />} />
          <Route path="/price" element={<Price />} />
+         {/* <Route path="/map" element={<Map use="come" />} />
+         <Route path="/weather" element={<Map use="weather" />} /> */}
          <Route path="/map" element={<Map />} />
+         <Route path="/weather" element={<Weather />} />
          <Route path="/announce" element={<Announce />} />
          <Route path="/login" element={<Login />} />
          <Route path="/*" element={<NotFound />} />
