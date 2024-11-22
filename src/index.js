@@ -7,14 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store/store'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
    //  <React.StrictMode>
    <Provider store={store}>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID} onScriptLoadError={() => console.log('실패')} onScriptLoadSuccess={() => console.log('성공')}>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </GoogleOAuthProvider>
    </Provider>
    //  </React.StrictMode>
 )

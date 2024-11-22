@@ -110,11 +110,19 @@ function WeatherMap() {
 
          <div className="map_map_1" id="map" style={{ width: '800px', height: '400px' }}></div>
 
-         <div className="map_text_1">
-            <h1>현재 기온 : {weather_now.main.temp}℃</h1>
-            <h1>상태 : {weather_now.weather[0].description}</h1>
-            <h1>풍속 : {weather_now.wind.speed} m/s</h1>
-         </div>
+         {error_now === null ? (
+            <div className="map_text_1">
+               <h1>현재 기온 : {weather_now.main.temp}℃</h1>
+               <h1>상태 : {weather_now.weather[0].description}</h1>
+               <h1>풍속 : {weather_now.wind.speed} m/s</h1>
+            </div>
+         ) : (
+            <div className="map_text_1">
+               <h1>현재 기온 : 정보 없음</h1>
+               <h1>상태 : 정보 없음</h1>
+               <h1>풍속 : 정보 없음</h1>
+            </div>
+         )}
       </div>
    )
 }
